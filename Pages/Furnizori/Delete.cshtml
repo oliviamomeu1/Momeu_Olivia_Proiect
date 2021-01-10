@@ -1,0 +1,27 @@
+﻿@page
+@model Momeu_Olivia_Proiect.Pages.Furnizori.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Sterge</h1>
+
+<h3>Sigur vrei sa stergi furnizorul?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Furnizor.NumeFurnizor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Furnizor.NumeFurnizor)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Furnizor.ID" />
+        <input type="submit" value="Sterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Inapoi</a>
+    </form>
+</div>

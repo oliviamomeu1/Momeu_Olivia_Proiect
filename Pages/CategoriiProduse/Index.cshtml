@@ -1,0 +1,43 @@
+﻿@page
+@model Momeu_Olivia_Proiect.Pages.CategoriiProduse.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Produse by Producator</h1>
+
+<p>
+    <a asp-page="Create">Adauga</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategorieProdus[0].Produs.Denumire) by
+                @Html.DisplayNameFor(model => model.CategorieProdus[0].Produs.Producator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategorieProdus[0].Categorie)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CategorieProdus) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produs.ProdusProducator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorie.NumeCategorie)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editeaza</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Sterge</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

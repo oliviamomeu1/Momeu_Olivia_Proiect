@@ -1,0 +1,31 @@
+﻿@page
+@model Momeu_Olivia_Proiect.Pages.CategoriiProduse.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CategorieProdus</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CategorieProdus.Produs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategorieProdus.Produs.Denumire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CategorieProdus.Categorie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategorieProdus.Categorie.NumeCategorie)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CategorieProdus.ID">Editeaza</a> |
+    <a asp-page="./Index">Inapoi</a>
+</div>
